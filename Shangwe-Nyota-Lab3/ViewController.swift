@@ -41,21 +41,44 @@ class ViewController: UIViewController {
     
     var currentRotation: CGFloat = 0 // To track the total rotation of the selected shape
 
+    @IBOutlet weak var sliderValue: UISlider! //outlet for the opacity slider
     
+    @IBOutlet weak var backgroundColorButton: UIButton! //outlet for background color
     
     var currentColor: UIColor = .red // Default color
     var currentShape: ShapeType = .square // Default shape
     var currentBehavior: BehaviorMode = .draw // Default behavior mode
     var selectedShape: Shape? // This Keep track of the shape being moved
+    var currentOpacity: CGFloat = 1.0 // Default opacity
+
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        sliderValue.value = Float(currentOpacity) //set default value
+    }
+    
+    
+    //Action for random background button changer
+    @IBAction func changeBackgroundColor(_ sender: Any) {
+        // Generate a random color
+        let randomColor = UIColor(
+            red: CGFloat.random(in: 0...1),
+            green: CGFloat.random(in: 0...1),
+            blue: CGFloat.random(in: 0...1),
+            alpha: 1.0
+        )
+        drawingCanvas.backgroundColor = randomColor // Set the background color to the random color
+        print("Background color changed to: \(randomColor)")
 
     }
     
+    @IBAction func sliderChanged(_ sender: UISlider) {
+        currentOpacity = CGFloat(sender.value) // Update the opacity value
+        print("opacity changed")
+    }
     
     
     //Clear all items from screen
@@ -105,13 +128,13 @@ class ViewController: UIViewController {
             
             switch currentShape {
             case .circle:
-                newShape = Circle(origin: touchPoint, color: currentColor)
+                newShape = Circle(origin: touchPoint, color: currentColor.withAlphaComponent(currentOpacity))
             case .square:
-                newShape = Square(origin: touchPoint, color: currentColor)
+                newShape = Square(origin: touchPoint, color: currentColor.withAlphaComponent(currentOpacity))
             case .triangle:
-                newShape = Triangle(origin: touchPoint, color: currentColor)
+                newShape = Triangle(origin: touchPoint, color: currentColor.withAlphaComponent(currentOpacity))
             }
-            
+
             if let shapeToDraw = newShape {
                 drawingCanvas.items.append(shapeToDraw)
                 drawingCanvas.setNeedsDisplay()
