@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Shangwe_Nyota_Lab3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HrC-Jo-HvA" customClass="DrawingView" customModule="Shangwe_Nyota_Lab3" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="168" width="393" height="455"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="uUG-72-X7Q" appends="YES" id="5yG-jj-Yvg"/>
+                                    <outletCollection property="gestureRecognizers" destination="909-T5-UAE" appends="YES" id="BGS-ts-vme"/>
+                                </connections>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TLy-B0-Szq">
+                                <rect key="frame" x="8" y="655" width="377" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="red"/>
+                                    <segment title="orange"/>
+                                    <segment title="yellow"/>
+                                    <segment title="green"/>
+                                    <segment title="blue"/>
+                                    <segment title="purple"/>
+                                </segments>
+                                <connections>
+                                    <action selector="colorChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Rc6-Jd-teJ"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="D5I-W4-kqu">
+                                <rect key="frame" x="8" y="710" width="377" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="" image="square" catalog="system"/>
+                                    <segment title="" image="triangle" catalog="system"/>
+                                    <segment title="" image="circle" catalog="system"/>
+                                </segments>
+                                <connections>
+                                    <action selector="shapeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="UA7-TA-s0v"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hUO-wj-axi">
+                                <rect key="frame" x="8" y="765" width="377" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Draw"/>
+                                    <segment title="Move"/>
+                                    <segment title="Erase"/>
+                                </segments>
+                                <connections>
+                                    <action selector="behaviorChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="daX-zZ-dI0"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Drawing App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hos-Oy-5vR">
+                                <rect key="frame" x="115" y="97" width="162" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGT-c5-D3V">
+                                <rect key="frame" x="313" y="97" width="64" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Clear"/>
+                                <connections>
+                                    <action selector="clearAllItems:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NTb-jr-eBF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dna-AO-wWj">
+                                <rect key="frame" x="23" y="97" width="61" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EfS-bC-Wu8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="behaviorSelection" destination="hUO-wj-axi" id="cCn-S4-Jna"/>
+                        <outlet property="clearButton" destination="lGT-c5-D3V" id="fUN-od-lhF"/>
+                        <outlet property="colorSelection" destination="TLy-B0-Szq" id="ldU-q4-TY6"/>
+                        <outlet property="drawingCanvas" destination="HrC-Jo-HvA" id="jQN-Rn-vH3"/>
+                        <outlet property="rotationGesture" destination="909-T5-UAE" id="iJa-rQ-f2K"/>
+                        <outlet property="saveButton" destination="dna-AO-wWj" id="8T0-q8-DHu"/>
+                        <outlet property="shapeSelection" destination="D5I-W4-kqu" id="Tuz-dO-ja9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="uUG-72-X7Q">
+                    <connections>
+                        <action selector="processPitch:" destination="BYZ-38-t0r" id="2f9-U4-1x6"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <rotationGestureRecognizer id="909-T5-UAE">
+                    <connections>
+                        <action selector="processRotation:" destination="BYZ-38-t0r" id="4le-Em-Xua"/>
+                    </connections>
+                </rotationGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="circle" catalog="system" width="128" height="123"/>
+        <image name="square" catalog="system" width="128" height="114"/>
+        <image name="triangle" catalog="system" width="128" height="109"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
