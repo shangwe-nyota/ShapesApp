@@ -64,6 +64,7 @@ class ViewController: UIViewController {
     //Action for random background button changer
     @IBAction func changeBackgroundColor(_ sender: Any) {
         // Generate a random color
+        //Randomc olor docs https://stackoverflow.com/questions/29779128/how-to-make-a-random-color-with-swift
         let randomColor = UIColor(
             red: CGFloat.random(in: 0...1),
             green: CGFloat.random(in: 0...1),
