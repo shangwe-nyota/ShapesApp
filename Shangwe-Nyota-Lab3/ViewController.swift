@@ -150,7 +150,6 @@ class ViewController: UIViewController {
     }
 
 
-
     @IBAction func colorChanged(_ sender: Any) {
         switch colorSelection.selectedSegmentIndex {
         case 0:
