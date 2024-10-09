@@ -232,6 +232,7 @@ class ViewController: UIViewController {
         saveDrawingToPhotos()
     }
     // Function to convert the drawingCanvas (DrawingView) to an image
+    //Docs for graphics image renderreor https://developer.apple.com/documentation/uikit/uigraphicsimagerenderer
     func saveDrawingToPhotos() {
         // Convert the drawingCanvas (DrawingView) to an image
         let renderer = UIGraphicsImageRenderer(bounds: drawingCanvas.bounds)
