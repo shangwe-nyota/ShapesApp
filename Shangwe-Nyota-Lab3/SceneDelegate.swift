@@ -19,9 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if shortcutItem.type == "clearCanvasShangwe" {
             print("Clear Canvas Shortcut selected")
             NotificationCenter.default.post(name: NSNotification.Name("clearCanvasShangwe"), object: nil)
-        } else if shortcutItem.type == "saveDrawingShangwe" {
-            print("Save drawing shortcut")
-            NotificationCenter.default.post(name: NSNotification.Name("saveDrawingShangwe"), object: nil)
+        } else if shortcutItem.type == "changeColorShangwe" {
+            print("Change background color shortcut")
+            NotificationCenter.default.post(name: NSNotification.Name("changeBackgroundColorShangwe"), object: nil)
         }
 
         completionHandler(true)

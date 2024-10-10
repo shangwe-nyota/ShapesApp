@@ -62,7 +62,7 @@ class ViewController: UIViewController {
         
         //EXTRA CREDIT: Adding observers to handle quick actions
         NotificationCenter.default.addObserver(self, selector: #selector(handleClearCanvasShortcut), name: NSNotification.Name("clearCanvasShangwe"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(handleSaveDrawingShortcut), name: NSNotification.Name("saveDrawingShangwe"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleChangeBackgroundColorShortcut), name: NSNotification.Name("changeBackgroundColorShangwe"), object: nil)
 
     }
     
@@ -73,9 +73,9 @@ class ViewController: UIViewController {
     }
 
     // Function to handle the "Save Drawing" shortcut
-    @objc func handleSaveDrawingShortcut() {
-        saveDrawingToPhotos()
-        print("Save Drawing via Shortcut triggered")
+    @objc func handleChangeBackgroundColorShortcut() {
+        changeBackgroundColor(self)
+        print("Bhange background color")
     }
 
 

@@ -16,9 +16,9 @@
 			<key>Shortcut Item Icon Type</key>
 			<string>Compose</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>Save Drawing</string>
+			<string>changeColorShangwe</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>saveDrawingShangwe</string>
+			<string>changeColorShangwe</string>
 		</dict>
 	</array>
 	<key>CFBundleIdentifier</key>
