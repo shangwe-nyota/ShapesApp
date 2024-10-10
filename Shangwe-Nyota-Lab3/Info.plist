@@ -2,6 +2,25 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>Shortcut Item Icon Type</key>
+			<string>Trash</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>ClearCanvas</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>clearCanvasShangwe</string>
+		</dict>
+		<dict>
+			<key>Shortcut Item Icon Type</key>
+			<string>Compose</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Save Drawing</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>saveDrawingShangwe</string>
+		</dict>
+	</array>
 	<key>CFBundleIdentifier</key>
 	<string></string>
 	<key>NSPhotoLibraryAddUsageDescription</key>

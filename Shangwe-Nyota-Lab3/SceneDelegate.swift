@@ -10,6 +10,23 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    
+    
+    //EXTRA CREDIT: HANDLING Quick actions
+    func windowScene(_ windowScene: UIWindowScene, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        print("Shortcut Item Type: \(shortcutItem.type)")
+        
+        if shortcutItem.type == "clearCanvasShangwe" {
+            print("Clear Canvas Shortcut selected")
+            NotificationCenter.default.post(name: NSNotification.Name("clearCanvasShangwe"), object: nil)
+        } else if shortcutItem.type == "saveDrawingShangwe" {
+            print("Save drawing shortcut")
+            NotificationCenter.default.post(name: NSNotification.Name("saveDrawingShangwe"), object: nil)
+        }
+
+        completionHandler(true)
+    }
+
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {

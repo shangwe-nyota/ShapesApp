@@ -58,7 +58,27 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         sliderValue.value = Float(currentOpacity) //set default value
+        
+        
+        //EXTRA CREDIT: Adding observers to handle quick actions
+        NotificationCenter.default.addObserver(self, selector: #selector(handleClearCanvasShortcut), name: NSNotification.Name("clearCanvasShangwe"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleSaveDrawingShortcut), name: NSNotification.Name("saveDrawingShangwe"), object: nil)
+
     }
+    
+    // Function to handle the "Clear Canvas" shortcut
+    @objc func handleClearCanvasShortcut() {
+        clearAllItems(self)
+        print("Clear Canvas via Shortcut triggered")
+    }
+
+    // Function to handle the "Save Drawing" shortcut
+    @objc func handleSaveDrawingShortcut() {
+        saveDrawingToPhotos()
+        print("Save Drawing via Shortcut triggered")
+    }
+
+
     
     
     //Action for random background button changer
