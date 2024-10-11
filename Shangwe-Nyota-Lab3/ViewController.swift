@@ -45,6 +45,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var backgroundColorButton: UIButton! //outlet for background color
     
+    @IBOutlet weak var animateShapes: UIButton!
+    
     var currentColor: UIColor = .red // Default color
     var currentShape: ShapeType = .square // Default shape
     var currentBehavior: BehaviorMode = .draw // Default behavior mode
@@ -268,8 +270,38 @@ class ViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    
+
+    
+    
+    @IBAction func animateShapes(_ sender: UIButton) {
+        print("incrase button pressed")
+        UIView.animate(withDuration: 1.0, delay: 0, options: [.repeat, .autoreverse], animations: {
+            for shape in self.drawingCanvas.items {
+                if let shapeItem = shape as? Shape {
+                    shapeItem.radius *= 1.2 // Increase size
+                }
+            }
+            self.drawingCanvas.setNeedsDisplay() // Redraw the canvas with updated sizes
+        }, completion: nil)
 
 
+
+    }
+    
+    @IBAction func decreaseShapes(_ sender: Any) {
+        print("Decrease button pressed")
+        UIView.animate(withDuration: 1.0, delay: 0, options: [.repeat, .autoreverse], animations: {
+            for shape in self.drawingCanvas.items {
+                if let shapeItem = shape as? Shape {
+                    shapeItem.radius /= 1.2 // Decrease size
+                }
+            }
+            self.drawingCanvas.setNeedsDisplay() // Redraw the canvas with updated sizes
+        }, completion: nil)
+
+    }
     
 }
 

@@ -106,11 +106,30 @@
                                     <action selector="changeBackgroundColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I4t-9O-uCz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phZ-Gu-D5a">
+                                <rect key="frame" x="231" y="804" width="89" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Increase"/>
+                                <connections>
+                                    <action selector="animateShapes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yLh-Wg-pbZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xnt-9H-pZx">
+                                <rect key="frame" x="76" y="804" width="97" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Decrease"/>
+                                <connections>
+                                    <action selector="decreaseShapes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jpw-Vk-MSe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="animateShapes" destination="phZ-Gu-D5a" id="1M4-ia-mxb"/>
                         <outlet property="backgroundColorButton" destination="SFe-5E-ZfF" id="Uut-ZK-wpM"/>
                         <outlet property="behaviorSelection" destination="hUO-wj-axi" id="cCn-S4-Jna"/>
                         <outlet property="clearButton" destination="lGT-c5-D3V" id="fUN-od-lhF"/>
